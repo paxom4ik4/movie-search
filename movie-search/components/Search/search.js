@@ -42,7 +42,7 @@ getMovies('Arnold');
 function getMovies(searchText){
   let errorArea = document.querySelector(".error-area");
   errorArea.innerText = '';
-  axios.get(`http://www.omdbapi.com?s=${searchText}&apikey=36a4af9d`)
+  axios.get(`https://www.omdbapi.com?s=${searchText}&apikey=36a4af9d`)
     .then((response) => {
       console.log(response);
       if(response.data.Error == 'Too many results.'){
@@ -57,7 +57,7 @@ function getMovies(searchText){
       //   responseMovies.push(movies[i].imdbID);
       // }
       //   for(let i = 0; i < 10; i++){
-      //     axios.get(`http://www.omdbapi.com?i=${responseMovies[i]}&apikey=36a4af9d`)
+      //     axios.get(`https://www.omdbapi.com?i=${responseMovies[i]}&apikey=36a4af9d`)
       //       .then((response) => {
       //       let movie = response.data;
       //       moviesRatings.push(movie.imdbRating);
@@ -100,7 +100,7 @@ function movieSelected(id){
 function getMovie(){
   let movieId = sessionStorage.getItem('movieId');
 
-  axios.get(`http://www.omdbapi.com?i=${movieId}&apikey=36a4af9d`)
+  axios.get(`https://www.omdbapi.com?i=${movieId}&apikey=36a4af9d`)
     .then((response) => {
       console.log(response);
       let movie = response.data;
