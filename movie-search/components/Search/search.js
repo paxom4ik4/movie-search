@@ -152,7 +152,7 @@ getMovies(currentSearchWord, currentPage);
 function getMovies(searchText, page){
   let errorArea = document.querySelector(".error-area");
   errorArea.innerText = '';
-  axios.get(`http://www.omdbapi.com?s=${searchText}&page=${page}&apikey=36a4af9d`) 
+  axios.get(`https://www.omdbapi.com?s=${searchText}&page=${page}&apikey=36a4af9d`) 
   
     .then((response) => {
         if(response.data.Error == 'Too many results.'){
@@ -198,7 +198,7 @@ function movieSelected(id){
 function getMovie(){
   let movieId = sessionStorage.getItem('movieId');
 
-  axios.get(`http://www.omdbapi.com?i=${movieId}&apikey=36a4af9d`)
+  axios.get(`https://www.omdbapi.com?i=${movieId}&apikey=36a4af9d`)
     .then((response) => {
       let movie = response.data;
 
