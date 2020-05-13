@@ -1,0 +1,77 @@
+.keyboard-hide{
+    display: none;
+}
+.keyboard{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #A2A9B3;
+    width: 70%;
+    height: 380px !important;
+    border: 2px solid rgb(150, 150, 150);
+    border-radius: 15px;
+    height: auto;
+    margin: 0 auto;
+    padding: 10px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+}
+.key_button{
+    background-color: black ;
+    width: 6.2%;
+    height: 60px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 8px 16px;
+    margin-bottom: 10px;
+    font-size: 24px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+    transition: .2s ease;
+}
+.key_button:hover{
+    cursor: pointer;
+    background-color: #b6b6b6;
+    
+}
+.key_button:active{
+    transform: scale(0.95, 0.95);
+    box-shadow: 0 0px 0px rgba(0,0,0,0.5);
+    background-color: rgb(236, 242, 247);  
+    border-color: rgb(59, 59, 59);
+}
+.active {
+    transition: .2s ease;
+    transform: scale(0.95, 0.95);
+    box-shadow: 0 0px 0px rgba(0,0,0,0.5);
+    background-color: rgb(236, 242, 247);
+    border-color: rgb(59, 59, 59);
+}
+.key_button:nth-child(16){
+    width: 8.3%;
+}
+.key_button:nth-child(29){
+    width: 10.2%;
+}
+.key_button:nth-child(30){
+    width: 11%;
+}
+.key_button:nth-child(42){
+    width: 14%;
+}
+.key_button:nth-child(43){
+    width: 15%;
+}
+.key_button:nth-child(55){
+    width: 11%;
+}
+.key_button:nth-child(59){
+    width: 40%;
+}
+
+.keyboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 460px;
+    bottom: 0px;
+    z-index: 100;
+    position: fixed;
+}
