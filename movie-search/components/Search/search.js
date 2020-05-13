@@ -1,7 +1,12 @@
 // Получение текста из поля ввода
-$(document).ready(() => {
-  $('#searchForm').on('submit', (e) => {
-    let searchText = $('#searchText').val();
+
+
+window.onload = () => {
+  let searchForm = document.querySelector('#searchForm');
+
+  searchForm.addEventListener('submit', (e) => {
+    let inputArea = document.querySelector("#searchText");
+    let searchText = inputArea.value;
     if(searchText === ""){
       let errorArea = document.querySelector(".error-area");
       errorArea.innerText = "Введите корректный запрос";
@@ -14,7 +19,7 @@ $(document).ready(() => {
     }
     e.preventDefault();
   });
-});
+};
 
 let currentSearchWord = 'Word';
 let currentPage = 1;
@@ -153,7 +158,6 @@ function getMovies(searchText, page){
   let errorArea = document.querySelector(".error-area");
   errorArea.innerText = '';
   axios.get(`https://www.omdbapi.com?s=${searchText}&page=${page}&apikey=36a4af9d`) 
-  
     .then((response) => {
         if(response.data.Error == 'Too many results.'){
           let errorArea = document.querySelector(".error-area");
@@ -266,10 +270,9 @@ function keyboardCreate(){
   let keyboardButtonClose = document.querySelector(".keyboard-button-close");
   keyboardButtonClose.classList.remove('keyboard-hide');
   keyBoard();
-  
 }
 
-// скрываем виртуальную клавиатуру при ширине менее 1024px
+// скрываем виртуальную клавиатуру при ширине менее 1024px (Не нашел как сделать бещ jQuery)
 $(window).resize(function(){
   let breakPoint = '1024';
   if ($(this).width() < breakPoint) {
